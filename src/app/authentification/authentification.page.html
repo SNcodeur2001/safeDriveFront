@@ -1,0 +1,61 @@
+<!-- authentication.page.html -->
+
+<!-- <ion-menu contentId="main-content" color="">
+  <ion-header>
+    <ion-toolbar color="" >
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content><br>
+    <ion-router-link routerLink="/">
+      <ion-button expand="full">
+        <ion-icon name="home"></ion-icon>
+        &nbsp;Accueil
+      </ion-button>
+    </ion-router-link>
+    <ion-router-link routerLink="/authentification">
+      <ion-button expand="full">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        &nbsp;S'authentifier
+      </ion-button>
+    </ion-router-link>
+  </ion-content>
+</ion-menu> -->
+
+<div class="ion-page" id="main-content">
+
+  <ion-header>
+    <ion-toolbar color="primary"> 
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+      <ion-buttons slot="end">
+        <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+
+<ion-content class="ion-padding">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Se connecter</ion-button>
+  </form>
+
+</ion-content>
+
+

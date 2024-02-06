@@ -1,0 +1,37 @@
+ion-content {
+
+    ion-label {
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    .custom-button {
+      margin-bottom: 15px;
+      background-color: #3498db;
+      color: #fff;
+      font-weight: bold;
+  
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+  
+  ion-title.header-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .bg-class {
+    --background: linear-gradient(197deg, #97b7f0 0%, #add8e6 100%);
+  }
+  .card-class {
+    // background-color: #a6c8f3;
+  }
+  swiper-container{
+    margin-top: 30px;
+    margin-bottom: 300px;
+  }
+  
+    

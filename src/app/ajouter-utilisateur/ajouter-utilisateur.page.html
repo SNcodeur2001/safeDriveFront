@@ -1,0 +1,66 @@
+<!-- utilisateur-form.page.html -->
+
+<ion-header>
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/modifier-utilisateur"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajout d'utilisateur</ion-title>
+    <ion-buttons slot="end">
+      <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Formulaire d'ajout d'utilisateur</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form (ngSubmit)="login()">
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input type="text" [(ngModel)]="nom" name="nom" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Mot de passe</ion-label>
+          <ion-input type="password" [(ngModel)]="motDePasse" name="motDePasse" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Rôle</ion-label>
+          <ion-select [(ngModel)]="role" name="role" required>
+            <ion-select-option value="utilisateur">Utilisateur</ion-select-option>
+            <ion-select-option value="gestionnaire">Gestionnaire</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Ajouter Utilisateur</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+  <!-- <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="caret-back-outline" routerLink="/authentification">
+        <ion-icon name="caret-back-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="home" routerLink="/">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="copy-outline">
+        <ion-icon name="copy-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+

@@ -1,0 +1,7 @@
+{
+  "name": "SafeDriveFront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

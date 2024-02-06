@@ -1,0 +1,21 @@
+/* authentication.page.scss */
+
+ion-content {
+    padding-top: 200px;
+  --background: #f4f4f4;
+}
+
+form {
+  max-width: 500px;
+  
+  margin:auto;
+  margin-top: 100px;
+}
+
+ion-button {
+  margin-top: 20px;
+}
+
+.bg-class {
+  --background: linear-gradient(197deg, #97b7f0 0%, #add8e6 100%);
+}

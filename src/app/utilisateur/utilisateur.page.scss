@@ -1,0 +1,45 @@
+// styles.scss
+
+page-utilisateur {
+    ion-header {
+      ion-toolbar {
+        ion-title {
+          font-size: 1.5em; // Ajustez la taille de la police selon vos besoins
+          font-weight: bold;
+        }
+      }
+    }
+  
+    ion-content {
+      ion-header {
+        ion-toolbar {
+          ion-title {
+            font-size: 2em; // Ajustez la taille de la police selon vos besoins
+          }
+        }
+      }
+  
+      ion-header {
+        ion-toolbar {
+          ion-title.header-title {
+            font-size: 1.2em; // Ajustez la taille de la police selon vos besoins
+            font-weight: bold;
+          }
+        }
+      }
+  
+      ion-content {
+        ion-label {
+          font-size: 1.1em; // Ajustez la taille de la police selon vos besoins
+          margin-bottom: 20px; // Espace entre le label et les boutons
+          display: block;
+          text-align: center;
+        }
+      }
+  
+      ion-button.custom-button {
+        margin-bottom: 10px; // Espace entre les boutons
+      }
+    }
+  }
+  

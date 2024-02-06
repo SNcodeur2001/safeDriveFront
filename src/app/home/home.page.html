@@ -1,0 +1,174 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-title">
+      Accueil
+    </ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+  
+
+
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-router-link routerLink="infraction">
+      <ion-card-content>
+        <ion-button expand="full" class="custom-button">Signaler infraction</ion-button>
+      </ion-card-content>
+    </ion-router-link>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-router-link routerLink="rules">
+      <ion-card-content>
+        <ion-button expand="full" class="custom-button">Voir les règles générales</ion-button>
+      </ion-card-content>
+    </ion-router-link>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-router-link routerLink="authentification">
+      <ion-card-content>
+        <ion-button expand="full" class="custom-button">S'authentifier</ion-button>
+      </ion-card-content>
+    </ion-router-link>
+  </ion-card>
+</ion-content>
+
+ <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="caret-back-outline" routerLink="/utilisateur">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="home" routerLink="/">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="copy-outline">
+      <ion-icon name="copy-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> --> 
+
+<ion-menu contentId="main-content" color="">
+  <ion-header>
+    <ion-toolbar color="" >
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content><br>
+    <ion-router-link routerLink="/">
+      <ion-button expand="full">
+        <ion-icon name="home"></ion-icon>
+        &nbsp;Accueil
+      </ion-button>
+    </ion-router-link>
+    <ion-router-link routerLink="/authentification">
+      <ion-button expand="full">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        &nbsp;S'authentifier
+      </ion-button>
+    </ion-router-link>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+
+  <ion-header>
+    <ion-toolbar color="primary"> 
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+      <ion-buttons slot="end">
+        <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content class="ion-padding"> 
+
+
+      <ion-card style="margin-bottom: 30px;">
+
+        <ion-card-header>
+          <ion-card-title>Bienvenue sur SafeDrive</ion-card-title>
+        </ion-card-header>
+        
+        <ion-card-content >
+          <img src="../../assets/Photos/5f856aefbacb69.72851543.jpg" alt="">
+          Ceci est la page d'acceuil de SafeDrive.
+          Bonne conduite!
+        </ion-card-content>
+      </ion-card>
+  
+      
+    
+      <swiper-container navigation="true">        
+        <swiper-slide>
+          <ion-card style="width: 300px; height: 320px; margin: auto;">
+            
+            <ion-router-link routerLink="infraction" color="dark">
+            <ion-card-header>
+              <ion-card-title>Signaler une infraction</ion-card-title>
+            </ion-card-header>
+            
+            <ion-card-content >
+              <img src="../../assets/Photos/81533122245.jpg" alt="">
+            </ion-card-content>
+          </ion-router-link>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card style="width: 300px; height: 320px; margin: auto;">
+            <ion-router-link routerLink="rules" color="dark">
+            <ion-card-header>
+              <ion-card-title>Voir les règles spécifiques</ion-card-title>
+            </ion-card-header>
+            
+            <ion-card-content >
+              <img src="../../assets/Photos/OIP (1).jpg" alt="">
+             
+            </ion-card-content>
+            </ion-router-link>
+          </ion-card>
+        </swiper-slide>
+        <!-- <ion-card style="width: 300px; height: 320px; margin: auto;">
+
+          <ion-card-header>
+            <ion-card-title>Bienvenue sur SafeDrive</ion-card-title>
+          </ion-card-header>
+          
+          <ion-card-content >
+            <img src="../../assets/Photos/5f856aefbacb69.72851543.jpg" alt="">
+            Ceci est la page d'acceuil de SafeDrive.
+            Bonne conduite!
+          </ion-card-content>
+        </ion-card> -->
+
+        <swiper-slide>
+          <ion-card style="width: 300px; height: 320px; margin: auto;">
+            <ion-router-link routerLink="scan-qr-code" color="dark">
+            <ion-card-header>
+              <ion-card-title>Scanner code QR</ion-card-title>
+            </ion-card-header>
+            
+            <ion-card-content style="text-align: center;" >
+              <img src="../../assets/Photos/OIP (2).jpg" width="200px" height="220px" alt="">
+            </ion-card-content>
+            </ion-router-link>
+          </ion-card>
+        </swiper-slide>
+      </swiper-container>
+  </ion-content>
+</div>

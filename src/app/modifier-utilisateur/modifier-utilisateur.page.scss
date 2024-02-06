@@ -1,0 +1,48 @@
+/* Ajoutez le style dans votre fichier utilisateur.page.scss */
+
+ion-card {
+    margin: 20px;
+    margin-top: 40px;
+  }
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+//   ion-tab-bar {
+//     background-color: #3880ff;
+//   }
+  
+//   ion-tab-button {
+//     --color: #ffffff;
+//     --background: #3880ff;
+  
+    // &.tab-selected {
+    //   --color: #3880ff;
+    //   --background: #ffffff;
+    // }
+//   }
+  

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Scan QR code</ion-title>
+    <ion-buttons slot="end">
+      <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-card style="margin-top: 100px;">
+    <ion-card-header>
+      <ion-card-title>Scanner un code QR</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="full" >Scanner un code QR</ion-button>
+      <p>Résultat:</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+
+<ion-content>
+  <ion-card style="margin-top: 100px;">
+    <ion-card-header>
+      <ion-card-title>Scanner un code QR</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="full" (click)="scanCode()">Scanner un code QR</ion-button>
+      <p *ngIf="barcode">Résultat : {{barcode}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
