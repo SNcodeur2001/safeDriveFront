@@ -11,18 +11,19 @@ import { NavController } from '@ionic/angular';
 export class AuthentificationPage implements OnInit {
   email!: string;
   password!: string;
+  loginError: boolean = false; // Ajout de la variable loginError pour gérer les erreurs de connexion
+
   constructor(
-    private authService: AuthService, 
-    private navMenu:NavController
-    ) { }
+    private authService: AuthService,
+    private navMenu: NavController
+  ) { }
 
   ngOnInit() {
   }
-  
-  onSubmit() {
-    const credentials = {email:this.email,password:this.password}
-    if(this.email && this.password){
 
+  onSubmit() {
+    const credentials = { email: this.email, password: this.password }
+    if (this.email && this.password) {
       this.authService.login(credentials).subscribe(
         (response) => {
           const monRole = response.data.role;
@@ -30,27 +31,25 @@ export class AuthentificationPage implements OnInit {
           console.log(monRole);
           console.log(response);
           // this.navMenu.navigateRoot("utilisateur");
-          if(monRole=="utilisateur"){
-          this.navMenu.navigateRoot("utilisateur");
+          if (monRole == "utilisateur") {
+            this.navMenu.navigateRoot("utilisateur");
 
-          }else if(monRole == "gestionnaire"){
-             this.navMenu.navigateRoot("modifier-utilisateur");
+          } else if (monRole == "gestionnaire") {
+            this.navMenu.navigateRoot("modifier-utilisateur");
 
-          }else{
+          } else {
             alert("Mettre un role valide");
 
           }
-          
+          this.loginError = false; // Réinitialiser loginError en cas de succès de la connexion
         },
         (error) => {
           // Gérez les erreurs ici
           console.error(error);
-          alert("Addresse email ou mot de passe incorrect");
+          // alert("Addresse email ou mot de passe incorrect");
+          this.loginError = true; // Définir loginError sur true en cas d'erreur de connexion
         }
       );
-    } else {
-      console.error('Email ou mot de passe non défini.');
-      alert(3);
     }
   }
 

@@ -27,7 +27,7 @@
 <div class="ion-page" id="main-content">
 
   <ion-header>
-    <ion-toolbar color="primary"> 
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/"></ion-back-button>
       </ion-buttons>
@@ -41,21 +41,24 @@
 
 
 
-<ion-content class="ion-padding">
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" name="email" [(ngModel)]="email" required></ion-input>
-    </ion-item>
+  <ion-content class="ion-padding">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="email" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Mot de passe</ion-label>
-      <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
+      </ion-item>
 
-    <ion-button expand="full" type="submit">Se connecter</ion-button>
-  </form>
+      <!-- Afficher le message d'erreur uniquement si loginError est vrai -->
+      <div *ngIf="loginError" style="color: red;">Identifiants incorrects. Veuillez réessayer.</div>
 
-</ion-content>
+      <ion-button expand="full" type="submit">Se connecter</ion-button>
+    </form>
+  </ion-content>
+
 
 

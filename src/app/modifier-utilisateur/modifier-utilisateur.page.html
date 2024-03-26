@@ -1,56 +1,45 @@
 <ion-header>
-  <ion-toolbar color="primary"> 
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/authentification"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Espage gestionnaire</ion-title>
-    <ion-buttons slot="end">
-      <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/authentification"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Espace gestionnaire</ion-title>
+      <ion-buttons slot="end">
+        <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content [fullscreen]="true">
-  
+  <ion-content [fullscreen]="true">
+    <ion-card color="mediumx">
+      <ion-router-link routerLink="/ajouter-utilisateur">
+        <ion-button color="success">Ajouter</ion-button>
+      </ion-router-link>
+      <ion-card-header>
+        <ion-card-title></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <ion-list>
+                <ion-item *ngFor="let utilisateur of utilisateurs">
+                  <ion-label>{{ utilisateur.name }}</ion-label>
+                  <ion-label>{{ utilisateur.email }}</ion-label>
+                  <ion-label>{{ utilisateur.role }}</ion-label>
+                  <ion-buttons slot="end">
+                    <ion-router-link routerLink="/edit-user">
+                        <ion-button color="primary" size="small">Editer</ion-button>
+                    </ion-router-link>
+                    <ion-button color="danger" size="small" (click)="deleteUser(utilisateur.id)">Désactiver</ion-button>
+                </ion-buttons>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 
-  <ion-card color="mediumx">
-    <ion-router-link routerLink="/ajouter-utilisateur">
-          <ion-button color="success">Ajouter</ion-button>
-
-    </ion-router-link>
-    <ion-card-header>
-      <ion-card-title></ion-card-title>
-      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-    </ion-card-header>
-  
-<ion-card-content>
-      <div class="container p-3">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>E-mail</th>
-              <th>Role</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let utilisateur of utilisateurs">
-              <td>{{ utilisateur.name }}</td>
-              <td>{{ utilisateur.email }}</td>
-              <td>{{ utilisateur.role }}</td>
-              <td>
-                <ion-card>
-                  <ion-button color="primary" style="width: 50px;">Editer</ion-button>
-                  <ion-button color="danger" style="width: 50px;">Désactiver</ion-button>
-                </ion-card>
-              </td>
-            </tr>
-            <!-- Ajoutez autant de lignes que nécessaire -->
-          </tbody>
-        </table>
-      </div>
-    </ion-card-content>
-  </ion-card>
- 
 

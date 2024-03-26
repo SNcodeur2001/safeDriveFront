@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/modifier-utilisateur"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajout d'utilisateur</ion-title>
+    <ion-buttons slot="end">
+      <img src="../../assets/icon/Black Minimalist Luxury Car Automotive Logo (3).png" alt="" width="100px" height="100px">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Formulaire modification</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form >
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input type="text" name="nom" [(ngModel)]="utilisateur.name" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="utilisateur.email" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Modifier Utilisateur</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user-service.service';
+import { AuthService } from '../services/auth.service';
+
+
+
 
 @Component({
   selector: 'app-modifier-utilisateur',
@@ -8,7 +12,11 @@ import { UserService } from '../services/user-service.service';
 })
 export class ModifierUtilisateurPage implements OnInit {
   utilisateurs: any[] = [];
-  constructor(private userService: UserService) {}
+
+
+  constructor(private userService: UserService,
+  private authService: AuthService,
+  ) {}
 
   ngOnInit() {
     this.getUtilisateurs();
@@ -22,6 +30,21 @@ export class ModifierUtilisateurPage implements OnInit {
       },
       (error) => {
         console.error(error);
+      }
+    );
+  }
+
+
+
+  deleteUser(id: number) {
+    this.authService.deleteUsers(id).subscribe(
+      response => {
+        console.log('User deleted successfully');
+        // Traitez la réponse ou effectuez d'autres actions après la suppression
+      },
+      error => {
+        console.error('Error deleting user:', error);
+        // Gérez l'erreur
       }
     );
   }

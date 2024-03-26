@@ -1,7 +1,9 @@
+// import { Component, OnInit } from '@angular/core';
+// import { Barcode, BarcodeScanner as mlkit, LensFacing, BarcodeFormat } from '@capacitor-mlkit/barcode-scanning';
+
 import { Component, OnInit } from '@angular/core';
-import { Barcode, BarcodeScanner as mlkit, LensFacing, BarcodeFormat } from '@capacitor-mlkit/barcode-scanning';
-
-
+import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-scan-qr-code',
@@ -10,18 +12,40 @@ import { Barcode, BarcodeScanner as mlkit, LensFacing, BarcodeFormat } from '@ca
 })
 
 export class ScanQRCodePage implements OnInit {
-  barcode:any;
+  isSupported = false;
+  barcodes: Barcode[] = [];
 
 
-
-  constructor() { }
+  constructor(private alertController: AlertController) {}
 
   ngOnInit() {
-  
+    BarcodeScanner.isSupported().then((result) => {
+      this.isSupported = result.supported;
+    });
   }
 
-  async scanCode() {
-    const { barcodes } = await mlkit.scan({ formats: [BarcodeFormat.QrCode] });
-    this.barcode = barcodes[0].displayValue;
+  async scan(): Promise<void> {
+    const granted = await this.requestPermissions();
+    if (!granted) {
+      this.presentAlert();
+      return;
+    }
+    const { barcodes } = await BarcodeScanner.scan();
+    this.barcodes.push(...barcodes);
+  }
+
+  async requestPermissions(): Promise<boolean> {
+    const { camera } = await BarcodeScanner.requestPermissions();
+    return camera === 'granted' || camera === 'limited';
+  }
+
+  async presentAlert(): Promise<void> {
+    const alert = await this.alertController.create({
+      header: 'Permission denied',
+      message: 'Please grant camera permission to use the barcode scanner.',
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
 }
+

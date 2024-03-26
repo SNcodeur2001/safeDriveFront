@@ -1,33 +1,5 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Infraction</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  
-</ion-content>
-<ion-content>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="caret-back-outline" routerLink="/">
-        <ion-icon name="caret-back-outline"></ion-icon>
-      </ion-tab-button>
-      <ion-tab-button tab="home" routerLink="/">
-        <ion-icon name="home"></ion-icon>
-      </ion-tab-button>
-      <ion-tab-button tab="copy-outline">
-        <ion-icon name="copy-outline"></ion-icon>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-</ion-content> -->
-
 <ion-header>
-  <ion-toolbar color="primary"> 
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -39,18 +11,27 @@
 </ion-header>
 
 
-  <ion-content>
-    
+<ion-content>
+
   <ion-card style="margin-top: 100px;">
     <ion-card-header>
       <ion-card-title>Uploader une vidéo ou une photo</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-button >Choisir une photo</ion-button>
+      <input type="file" (change)="onFileChange($event)">
       <ion-img></ion-img>
-      <ion-button expand="full">Signaler l'infraction</ion-button>
+      <!-- Vous pouvez ajouter ici d'autres éléments pour afficher des informations sur le fichier sélectionné -->
+      <!-- <ion-button expand="full">Signaler l'infraction</ion-button> -->
+
+       <!-- Afficher le message si le téléchargement est réussi -->
+
     </ion-card-content>
   </ion-card>
+   <!-- Afficher le message si le téléchargement est réussi -->
+  <ion-item *ngIf="message" style="color: green;">
+    {{ message }}
+  </ion-item>
 </ion-content>
+
 

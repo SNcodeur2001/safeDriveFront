@@ -68,6 +68,10 @@ const routes: Routes = [
     path: 'modifier-form',
     loadChildren: () => import('./modifier-form/modifier-form.module').then( m => m.ModifierFormPageModule)
   },
+  {
+    path: 'edit-user',
+    loadChildren: () => import('./edit-user/edit-user.module').then( m => m.EditUserPageModule)
+  },
 ];
 
 @NgModule({
